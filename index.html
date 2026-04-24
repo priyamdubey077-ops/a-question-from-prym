@@ -13,26 +13,51 @@ body {
   justify-content: center;
   align-items: center;
   font-family: Arial, sans-serif;
-  background: #111;
+  overflow: hidden;
+
+  /* Animated Gradient */
+  background: linear-gradient(-45deg, #ff6b6b, #5f27cd, #48dbfb, #1dd1a1);
+  background-size: 400% 400%;
+  animation: gradientBG 8s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Container */
+.container {
+  text-align: center;
   color: white;
 }
 
-/* BUTTON */
+/* Title */
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease;
+}
+
+/* Button */
 button {
-  padding: 15px 35px;
+  padding: 15px 40px;
   font-size: 20px;
   border: none;
-  border-radius: 12px;
+  border-radius: 30px;
   cursor: pointer;
+  background: white;
+  color: black;
   transition: 0.3s;
 }
 
 button:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(255,255,255,0.8);
+  box-shadow: 0 0 25px rgba(255,255,255,0.8);
 }
 
-/* FULL SCREEN IMAGE SCREEN */
+/* Hidden screen */
 #imageScreen {
   position: fixed;
   top: 0;
@@ -53,34 +78,40 @@ button:hover {
 
 #text {
   margin-top: 20px;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
-  text-align: center;
+  color: white;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<button onclick="openScreen()">Open</button>
+<div class="container">
+  <h1>Welcome</h1>
+  <button onclick="openScreen()">Open</button>
+</div>
 
 <div id="imageScreen">
-  <img src="IMG-20260420-WA0010.jpg" alt="Image">
+  <img src="IMG-20260420-WA0010.jpg">
   <div id="text">MIL JAEGA KYA?</div>
 </div>
 
-<!-- AUDIO -->
 <audio id="myAudio" loop>
   <source src="AUD-20260424-WA0008.mp3" type="audio/mpeg">
 </audio>
 
 <script>
 function openScreen() {
+  document.querySelector(".container").style.display = "none";
   document.getElementById("imageScreen").style.display = "flex";
-  document.querySelector("button").style.display = "none";
-
-  let audio = document.getElementById("myAudio");
-  audio.play();
+  document.getElementById("myAudio").play();
 }
 </script>
 
