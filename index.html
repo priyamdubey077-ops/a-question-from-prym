@@ -2,13 +2,14 @@
 <html>
 <head>
   <title>Open</title>
+
   <style>
     body {
       margin: 0;
+      background-color: black;
+      color: white;
       font-family: Arial;
       text-align: center;
-      background-color: #111;
-      color: white;
     }
 
     #home {
@@ -21,7 +22,53 @@
     button {
       padding: 15px 30px;
       font-size: 20px;
-      cursor: pointer;
       border: none;
       border-radius: 10px;
-      background
+      background-color: red;
+      color: white;
+      cursor: pointer;
+    }
+
+    #content {
+      display: none;
+      padding-top: 40px;
+    }
+
+    img {
+      width: 80%;
+      max-width: 400px;
+      border-radius: 12px;
+      display: block;
+      margin: auto;
+    }
+
+    .text {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- OPEN BUTTON -->
+  <div id="home">
+    <button onclick="openPage()">OPEN</button>
+  </div>
+
+  <!-- IMAGE + TEXT -->
+  <div id="content">
+    <img src="./IMG-20260420-WA0010.jpg">
+    <div class="text">S@X MIL JAEGA KYA?</div>
+  </div>
+
+  <script>
+    function openPage() {
+      document.getElementById("home").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    }
+  </script>
+
+</body>
+  </html>
