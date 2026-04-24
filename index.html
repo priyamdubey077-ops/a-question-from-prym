@@ -1,74 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Open</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Website</title>
 
-  <style>
-    body {
-      margin: 0;
-      background-color: black;
-      color: white;
-      font-family: Arial;
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(-45deg, #ff6b6b, #5f27cd, #48dbfb, #1dd1a1);
+  background-size: 400% 400%;
+  animation: gradientBG 8s ease infinite;
+}
 
-    #home {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
 
-    button {
-      padding: 15px 30px;
-      font-size: 20px;
-      border: none;
-      border-radius: 10px;
-      background-color: red;
-      color: white;
-      cursor: pointer;
-    }
+button {
+  padding: 15px 35px;
+  font-size: 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    #content {
-      display: none;
-      padding-top: 40px;
-    }
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255,255,255,0.8);
+}
 
-    img {
-      width: 80%;
-      max-width: 400px;
-      border-radius: 12px;
-      display: block;
-      margin: auto;
-    }
+/* Popup */
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s;
+}
 
-    .text {
-      margin-top: 20px;
-      font-size: 24px;
-      font-weight: bold;
-    }
-  </style>
+#popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- OPEN BUTTON -->
-  <div id="home">
-    <button onclick="openPage()">OPEN</button>
-  </div>
+<button onclick="openPopup()">Open</button>
 
-  <!-- IMAGE + TEXT -->
-  <div id="content">
-    <img src="./IMG-20260420-WA0010.jpg">
-    <div class="text">S@X MIL JAEGA KYA?</div>
+<div id="popup">
+  <div id="popup-content">
+    S@X MIL JAEGA KYA?
   </div>
+</div>
 
-  <script>
-    function openPage() {
-      document.getElementById("home").style.display = "none";
-      document.getElementById("content").style.display = "block";
-    }
-  </script>
+<!-- AUDIO -->
+<audio id="myAudio" loop>
+  <source src="AUD-20260424-WA0008.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function openPopup() {
+  document.getElementById("popup").style.display = "flex";
+
+  let audio = document.getElementById("myAudio");
+  audio.play();
+}
+</script>
 
 </body>
-  </html>
+</html>
