@@ -1,45 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Mystery Site</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: white;
-    }
+    <title>My Site</title>
 
-    button {
-      padding: 15px 30px;
-      font-size: 20px;
-      cursor: pointer;
-      border: none;
-      border-radius: 10px;
-      background-color: #00c3ff;
-      color: black;
-      font-weight: bold;
-    }
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff6a00, #ee0979, #00c6ff);
+            font-family: Arial, sans-serif;
+        }
 
-    button:hover {
-      background-color: #0099cc;
-    }
-  </style>
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #msg {
+            display: none;
+            font-size: 40px;
+            font-weight: 900;
+            color: white;
+            text-align: center;
+            background: rgba(0,0,0,0.6);
+            padding: 30px;
+            border-radius: 15px;
+            position: absolute;
+        }
+    </style>
+
 </head>
 <body>
 
-  <button onclick="showPopup()">OPEN</button>
+<button onclick="showMessage()">OPEN</button>
 
-  <script>
-    function showPopup() {
-      alert("SameX mil jaega kya?");
-    }
-  </script>
+<div id="msg">S@X MIL JAEGA KYA?</div>
+
+<script>
+function showMessage() {
+    document.getElementById("msg").style.display = "block";
+}
+</script>
 
 </body>
 </html>
