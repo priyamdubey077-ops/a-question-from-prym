@@ -1,53 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Site</title>
+  <title>Open</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      text-align: center;
+      background-color: #111;
+      color: white;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #ff6a00, #ee0979, #00c6ff);
-            font-family: Arial, sans-serif;
-        }
+    #home {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        button {
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        #msg {
-            display: none;
-            font-size: 40px;
-            font-weight: 900;
-            color: white;
-            text-align: center;
-            background: rgba(0,0,0,0.6);
-            padding: 30px;
-            border-radius: 15px;
-            position: absolute;
-        }
-    </style>
-
-</head>
-<body>
-
-<button onclick="showMessage()">OPEN</button>
-
-<div id="msg">S@X MIL JAEGA KYA?</div>
-
-<script>
-function showMessage() {
-    document.getElementById("msg").style.display = "block";
-}
-</script>
-
-</body>
-</html>
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      background
